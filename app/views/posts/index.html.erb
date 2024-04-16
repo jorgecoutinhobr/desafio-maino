@@ -18,7 +18,6 @@
           <td class="align-middle"><%= post.title %></td>
           <td class="align-middle">
             <%= link_to "Show this post", post, class: 'btn btn-sm btn-success' %>
-            <%= link_to "Edit this post", edit_post_path(post), class: 'btn btn-sm btn-primary' %>
           </td>
           <td class="align-middle"><%= post.created_at.strftime("%d %m %Y") %></td>
         </tr>

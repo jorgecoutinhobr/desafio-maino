@@ -5,14 +5,18 @@
     <p class='text-center'>
       <%= post.body %>
     </p>
-
-    <p class='text-left subtle'>
+  <div class='d-flex justify-content-between'>
+    <div class='text-left'>
+      <p>
       Created by:
       <%= post.user.email %>
-    </p>
-    <p class='text-left'>
+      </p>
+      <p>
       Writed at:
       <%= post.created_at.strftime("%d %m %Y %H:%M") %>
     </p>
+    </div>
+    <div class='text-right'>
+      <%= link_to "Edit this post", edit_post_path(@post), class: 'btn btn-sm btn-success' if @post.user == current_user %>
   </div>
 </div>
