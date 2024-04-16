@@ -5,7 +5,9 @@ class PostsController < ApplicationController
     @pagy, @posts = pagy(Post.most_recent, items: 3)
   end
 
-  def show; end
+  def show
+    @pagy, @comments = pagy(@post.comments.order(created_at: :desc), items: 3)
+  end
 
   def new
     @post = Post.new

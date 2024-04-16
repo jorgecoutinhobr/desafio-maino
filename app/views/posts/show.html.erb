@@ -1,1 +1,9 @@
 <%= render @post %>
+
+
+<% @comments.each do |comment| %>
+  <%= render 'comments/comment', post: @post, comment: comment %>
+<% end %>
+<%== pagy_nav(@pagy) %>
+
+<%= render 'comments/form', post: @post%>
