@@ -1,12 +1,30 @@
 <h1>Posts</h1>
 
-<div id="posts">
-  <% @posts.each do |post| %>
-    <%= render post %>
-    <p>
-      <%= link_to "Show this post", post %>
-    </p>
-  <% end %>
-</div>
+<table class="table table-dark">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Author</th>
+      <th scope="col">Title</th>
+      <th scope="col">Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tbody>
+      <% @posts.each do |post| %>
+        <tr>
+          <th><%= post.id %></th>
+          <td><%= post.user.email %></td>
+          <td><%= post.title %></td>
+          <td>
+            <%= link_to "Show this post", post, class: 'btn btn-sm btn-success' %>
+            <%= link_to "Edit this post", edit_post_path(post), class: 'btn btn-sm btn-primary' %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+    </tr>
+  </tbody>
+</table>
 
-<%= link_to "New post", new_post_path %>
+<%= link_to "New post", new_post_path, class: 'btn btn-success' %>

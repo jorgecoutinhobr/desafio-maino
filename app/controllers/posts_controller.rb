@@ -2,7 +2,7 @@ class PostsController < ApplicationController
   before_action :set_post, only: %i[ show edit update destroy ]
 
   def index
-    @posts = Post.all
+    @posts = Post.most_recent
   end
 
   def show; end
@@ -20,7 +20,7 @@ class PostsController < ApplicationController
     if @post.save
       redirect_to post_url(@post), notice: "Post was successfully created."
     else
-      render :new, status: :unprocessable_entity
+      redirect_to new_post_path, alert: @post.errors.full_messages.join(" - ")
     end
   end
 
