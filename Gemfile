@@ -14,11 +14,14 @@ gem "jbuilder"
 gem "tzinfo-data", platforms: %i[ windows jruby ]
 gem "bootsnap", require: false
 
-# Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
+# add
 gem "image_processing", "~> 1.2"
+gem 'devise'
 
 group :development, :test do
   gem "debug", platforms: %i[ mri windows ]
+
+  #add
   gem 'rspec-rails', '~> 6.1.0'
   gem 'pry-rails'
   gem 'awesome_print'
