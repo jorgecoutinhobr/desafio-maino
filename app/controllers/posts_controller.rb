@@ -2,7 +2,7 @@ class PostsController < ApplicationController
   before_action :set_post, only: %i[ show edit update destroy ]
 
   def index
-    @posts = Post.most_recent
+    @pagy, @posts = pagy(Post.most_recent, items: 3)
   end
 
   def show; end

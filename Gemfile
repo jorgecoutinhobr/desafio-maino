@@ -17,6 +17,7 @@ gem "bootsnap", require: false
 # add
 gem "image_processing", "~> 1.2"
 gem 'devise'
+gem 'pagy'
 
 group :development, :test do
   gem "debug", platforms: %i[ mri windows ]

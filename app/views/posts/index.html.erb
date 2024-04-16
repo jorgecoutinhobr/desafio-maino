@@ -7,24 +7,25 @@
       <th scope="col">Author</th>
       <th scope="col">Title</th>
       <th scope="col">Actions</th>
+      <th scope="col">Created at</th>
     </tr>
   </thead>
   <tbody>
-    <tbody>
       <% @posts.each do |post| %>
-        <tr>
-          <th><%= post.id %></th>
-          <td><%= post.user.email %></td>
-          <td><%= post.title %></td>
-          <td>
+        <tr style="height: 100px;">
+          <th class="align-middle"><%= post.id %></th>
+          <td class="align-middle"><%= post.user.email %></td>
+          <td class="align-middle"><%= post.title %></td>
+          <td class="align-middle">
             <%= link_to "Show this post", post, class: 'btn btn-sm btn-success' %>
             <%= link_to "Edit this post", edit_post_path(post), class: 'btn btn-sm btn-primary' %>
           </td>
+          <td class="align-middle"><%= post.created_at.strftime("%d %m %Y") %></td>
         </tr>
       <% end %>
-    </tbody>
     </tr>
   </tbody>
 </table>
+<%== pagy_nav(@pagy) %>
 
-<%= link_to "New post", new_post_path, class: 'btn btn-success' %>
+<%= link_to "New post", new_post_path, class: 'btn btn-success mt-3' %>
