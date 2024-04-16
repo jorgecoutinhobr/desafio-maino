@@ -1,17 +1,18 @@
 <div id="<%= dom_id post %>">
-  <p>
-    <strong>Title:</strong>
-    <%= post.title %>
-  </p>
+  <div class='mx-auto p-2'>
+    <h1 class='text-center'><%= post.title %></h1>
 
-  <p>
-    <strong>Body:</strong>
-    <%= post.body %>
-  </p>
+    <p class='text-center'>
+      <%= post.body %>
+    </p>
 
-  <p>
-    <strong>User:</strong>
-    <%= post.user_id %>
-  </p>
-
+    <p class='text-left subtle'>
+      Created by:
+      <%= post.user.email %>
+    </p>
+    <p class='text-left'>
+      Writed by:
+      <%= post.created_at.strftime("%d %m %Y") %>
+    </p>
+  </div>
 </div>
