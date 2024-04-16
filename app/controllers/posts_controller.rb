@@ -14,14 +14,16 @@ class PostsController < ApplicationController
     @post = Post.new
   end
 
-  def edit; end
+  def edit
+    redirect_to post_path(@post), alert: "You are not the owner of this post." if can_not_manage?
+  end
 
   def create
     @post = Post.new(post_params)
     @post.user = current_user
 
     if @post.save
-      redirect_to post_url(@post), notice: "Post was successfully created."
+      redirect_to post_path(@post), notice: "Post was successfully created."
     else
       redirect_to new_post_path, alert: @post.errors.full_messages.join(" - ")
     end
@@ -29,7 +31,7 @@ class PostsController < ApplicationController
 
   def update
     if @post.update(post_params)
-      redirect_to post_url(@post), notice: "Post was successfully updated."
+      redirect_to post_path(@post), notice: "Post was successfully updated."
     else
       render :edit, status: :unprocessable_entity
     end
@@ -37,7 +39,7 @@ class PostsController < ApplicationController
 
   def destroy
     @post.destroy!
-    redirect_to posts_url, notice: "Post was successfully destroyed."
+    redirect_to posts_path, notice: "Post was successfully destroyed."
   end
 
   private
@@ -48,5 +50,9 @@ class PostsController < ApplicationController
 
   def post_params
     params.require(:post).permit(:title, :body)
+  end
+
+  def can_not_manage?
+    @post.user != current_user
   end
 end
