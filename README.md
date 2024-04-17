@@ -25,3 +25,8 @@
   <li>Factory Bot</li>
   <li>Image Processing</li>
 </ul>
+
+
+Diagrama do projeto
+![mermaid_erd](https://github.com/jorgecoutinhobr/desafio-maino/assets/102194363/f441bc19-47aa-4e48-aae0-edd881a9afbf)
+
