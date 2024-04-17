@@ -17,6 +17,20 @@ namespace :populate_db do
       post.body = Faker::Lorem.paragraphs(number: 15).join("\n\n")
       post.save
     end
+
+    10.times do
+      # anonymous comments
+      c = Comment.new(post_id: Post.all.sample.id)
+      c.body = Faker::Lorem.paragraphs(number: 1).join("\n\n")
+      c.save
+    end
+
+    10.times do
+      # authenticated comments
+      c = Comment.new(post_id: Post.all.sample.id, user_id: [1,2].sample)
+      c.body = Faker::Lorem.paragraphs(number: 1).join("\n\n")
+      c.save
+    end
     puts "Banco de dados populado com sucesso!"
   end
 end
