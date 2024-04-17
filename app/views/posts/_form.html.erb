@@ -1,12 +1,17 @@
 <%= form_with(model: post) do |form| %>
-  <div>
+  <div class='pt-2'>
     <%= form.label :title, style: "display: block" %>
     <%= form.text_field :title %>
   </div>
 
-  <div>
+  <div class='pt-2'>
     <%= form.label :body, style: "display: block" %>
     <%= form.rich_text_area :body %>
+  </div>
+
+  <div class='pt-2'>
+    <%= form.label :tag_ids, "Tags" %><br>
+    <%= form.collection_select :tag_ids, Tag.all, :id, :name, {}, {multiple: true} %>
   </div>
 
   <div>

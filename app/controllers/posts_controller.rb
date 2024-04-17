@@ -3,7 +3,11 @@ class PostsController < ApplicationController
   before_action :authenticate_user!, except: %i[ index show ]
 
   def index
-    @pagy, @posts = pagy(Post.most_recent, items: 3)
+    if params[:tag].present?
+      @pagy, @posts = pagy(Post.joins(:tags).where(tags: { name: params[:tag] }), items: 3)
+    else
+      @pagy, @posts = pagy(Post.most_recent, items: 3)
+    end
   end
 
   def show
@@ -49,7 +53,7 @@ class PostsController < ApplicationController
   end
 
   def post_params
-    params.require(:post).permit(:title, :body)
+    params.require(:post).permit(:title, :body, tag_ids: [])
   end
 
   def can_not_manage?
