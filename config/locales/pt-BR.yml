@@ -1,0 +1,33 @@
+pt-BR:
+  links:
+    show: "Mostrar"
+    edit: "Editar"
+    delete: "Apagar"
+    filter: "Filtrar"
+    new_post: "Novo Post"
+    update_post: "Atualizar Post"
+  text:
+    author: "Autor"
+    title: "Título"
+    body: "Corpo"
+    created_at: "Criado em"
+    updated_at: "Atualizado em"
+    actions: "Ações"
+    sign_in: "Entrar"
+    sign_out: "Sair"
+    sign_up: "Registrar"
+    created_by: "Criado por"
+    written_by: "Escrito por"
+    add_comment: "Adicionar Comentário"
+    anonymous: "Anônimo"
+    show_post: "Mostrar Postagem"
+    back_to_posts: "Voltar para Postagens"
+    edit_post: "Editar Postagem"
+    new_post: "Nova Postagem"
+    forgot_password: "Esqueceu sua senha?"
+    reset_password: "Enviar-me instruções de redefinição de senha"
+    password: "Senha"
+    password_confirmation: "Confirmação de Senha"
+    
+
+    

@@ -1,10 +1,9 @@
-<%= form_with(model: [post, post.comments.build]) do |form| %>
+<%= form_with(model: [post, post.comments.build], class: 'mt-2') do |form| %>
   <div>
-    <%= form.label 'Comment', style: "display: block" %>
     <%= form.rich_text_area :body %>
   </div>
 
   <div>
-    <%= form.submit %>
+    <%= form.submit t('text.add_comment'), class: 'btn btn-success mt-2' %>
   </div>
 <% end %>

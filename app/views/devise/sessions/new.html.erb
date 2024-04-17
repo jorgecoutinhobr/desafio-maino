@@ -1,22 +1,22 @@
 <div class="container mt-2">
  <div class="row justify-content-center">
     <div class="col-md-6">
-      <h2 class="text-center mb-4">Log in</h2>
+      <h2 class="text-center mb-4"><%= t('text.sign_in')%></h2>
       <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: { class: 'form-signin' }) do |f| %>
         <div class="form-label-group">
-          <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'form-control', placeholder: 'Email address' %>
-          <%= f.label :email, class: 'form-label' %>
+          <%= f.label :email, class: 'form-label mb-1' %>
+          <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'form-control', placeholder: 'Email' %>
         </div>
 
         <div class="form-label-group">
-          <%= f.password_field :password, autocomplete: "current-password", class: 'form-control', placeholder: 'Password' %>
-          <%= f.label :password, class: 'form-label' %>
+          <%= f.label :password, class: 'form-label mb-1' %>
+          <%= f.password_field :password, autocomplete: "current-password", class: 'form-control', placeholder: t('text.password') %>
         </div>
 
         <% if devise_mapping.rememberable? %>
           <div class="form-check mb-3">
+             <%= f.label :remember_me, class: 'form-check-label mb-1' %>
             <%= f.check_box :remember_me, class: 'form-check-input' %>
-            <%= f.label :remember_me, class: 'form-check-label' %>
           </div>
         <% end %>
 
@@ -24,7 +24,7 @@
 
           <div class='d-flex justify-content-between'>
           <div class='left'>
-            <%= f.submit "Log in", class: 'btn btn-success btn-block' %>
+            <%= f.submit t('text.sign_in'), class: 'btn btn-success btn-block' %>
           </div>
           <div class='right'>
              <%= render "devise/shared/links" %>
