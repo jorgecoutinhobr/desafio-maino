@@ -12,9 +12,9 @@ namespace :populate_db do
       Tag.create(name: Faker::Book.genre)
     end
 
-    5.times do
+    10.times do
       post = Post.new(title: Faker::Book.title, user_id: [1,2].sample, tag_ids: [1, 2, 3, 4, 5].sample(2))
-      post.body = Faker::Lorem.paragraphs(number: 7).join("\n\n")
+      post.body = Faker::Lorem.paragraphs(number: 15).join("\n\n")
       post.save
     end
     puts "Banco de dados populado com sucesso!"
