@@ -28,6 +28,7 @@ pt-BR:
     reset_password: "Enviar-me instruções de redefinição de senha"
     password: "Senha"
     password_confirmation: "Confirmação de Senha"
+    language: "Idioma"
     
 
     

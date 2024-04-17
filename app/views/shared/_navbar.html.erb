@@ -1,4 +1,3 @@
-
 <nav class="navbar navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
   <div class="container-fluid">
      <%= link_to "Maino blog", root_path, class: 'navbar-brand' %>
@@ -6,31 +5,49 @@
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+      <div class="ms-auto d-flex align-items-center">
+        <div class="dropdown me-2">
+          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+            <%=t('text.language')%>
+          </button>
+          <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <li>
+              <div class="image-link-container d-flex align-items-center">
+                <img src="https://www.curitiba.pr.leg.br/atividade-parlamentar/legislacao/imagens/bandeira-do-brasil.png" width="25" height="20" style="margin-left: 10px;">
+                <%= link_to "Português", "#{request.path}?locale=pt-BR", class: 'dropdown-item' %>
+              </div>
+            </li>
+            <li>
+              <div class="image-link-container d-flex align-items-center">
+                <img src="https://www.gov.br/agricultura/pt-br/assuntos/relacoes-internacionais/agro-mais-investimentos/imagens/bandeira-dos-estados-unidos.png/@@images/image.png" width="25" height="20" style="margin-left: 10px;">
+                <%= link_to "English", "#{request.path}?locale=en", class: 'dropdown-item' %>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <% if user_signed_in? %>
+          <div class="dropdown">
+            <a class="nav-link dropdown-toggle d-flex align-items-center" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+              <%= image_tag avatar_url(current_user), style: 'height:40px; width:auto; border-radius: 50%;' if current_user %>
+            </a>
 
-      </ul>
-      <% if user_signed_in? %>
-      <div class="dropdown">
-        <a class="nav-link dropdown-toggle d-flex align-items-center" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
-          <%= image_tag avatar_url(current_user), style: 'height:40px; width:auto; border-radius: 50%;' if current_user %>
-        </a>
-
-        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuLink">
-          <li><%= link_to t('links.edit'), edit_user_registration_path(current_user), class: 'dropdown-item' %></li>
-          <li><hr class="dropdown-divider"></li>
-          <li><%= link_to t('text.sign_out'), destroy_user_session_path, class: 'dropdown-item' %></li>
-        </ul>
+            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuLink">
+              <li><%= link_to t('links.edit'), edit_user_registration_path(current_user), class: 'dropdown-item' %></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><%= link_to t('text.sign_out'), destroy_user_session_path, class: 'dropdown-item' %></li>
+            </ul>
+          </div>
+        <% else %>
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <%= link_to t('text.sign_in'), new_user_session_path, class: 'nav-link' %>
+            </li>
+            <li class="nav-item">
+              <%= link_to t('text.sign_up'), new_user_registration_path, class: 'nav-link' %>
+            </li>
+          </ul>
+        <% end %>
       </div>
-      <% else %>
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            <%= link_to t('text.sign_in'), new_user_session_path, class: 'nav-link' %>
-          </li>
-          <li class="nav-item">
-            <%= link_to t('text.sign_up'), new_user_registration_path, class: 'nav-link' %>
-          </li>
-        </ul>
-      <% end %>
     </div>
   </div>
 </nav>
