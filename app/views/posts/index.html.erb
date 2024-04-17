@@ -2,7 +2,7 @@
 
 <%= form_with(url: posts_path, method: :get, html: { class: 'text-end'}) do %>
  <%= select_tag 'tag', options_from_collection_for_select(Tag.all, 'name', 'name', params[:tag]), prompt: 'Selecione uma tag', html: {class: 'form-select form-select'} %>
- <%= submit_tag 'Filtrar', class: 'btn btn-success mb-1' %>
+ <%= submit_tag t('links.filter'), class: 'btn btn-success mb-1' %>
 <% end %>
 
 
@@ -11,11 +11,11 @@
   <thead>
     <tr>
       <th scope="col">#</th>
-      <th scope="col">Author</th>
-      <th scope="col">Title</th>
+      <th scope="col"><%= t('text.author')%></th>
+      <th scope="col"><%= t('text.title')%></th>
       <th scope="col">Tags</th>
-      <th scope="col">Actions</th>
-      <th scope="col">Created at</th>
+      <th scope="col"><%= t('text.actions')%></th>
+      <th scope="col"><%= t('text.created_at')%></th>
     </tr>
   </thead>
   <tbody>
@@ -38,7 +38,7 @@
             <span class="badge text-bg-secondary"><%= tag.name %></span>
           <% end %>
         <td class="align-middle">
-          <%= link_to "Show this post", post, class: 'btn btn-sm btn-success' %>
+          <%= link_to t('links.show'), post, class: 'btn btn-sm btn-success' %>
         </td>
         <td class="align-middle"><%= post.created_at.strftime("%d %m %Y") %></td>
       </tr>
@@ -47,4 +47,4 @@
 </table>
 <%== pagy_nav(@pagy) if @pagy.pages > 1 %>
 
-<%= link_to "New post", new_post_path, class: 'btn btn-success mt-3' %>
+<%= link_to t('links.new_post'), new_post_path, class: 'btn btn-success mt-3' %>
