@@ -18,6 +18,7 @@ gem "bootsnap", require: false
 gem "image_processing", "~> 1.2"
 gem 'devise'
 gem 'pagy'
+gem 'faker'
 
 group :development, :test do
   gem "debug", platforms: %i[ mri windows ]
@@ -27,7 +28,6 @@ group :development, :test do
   gem 'pry-rails'
   gem 'awesome_print'
   gem 'factory_bot_rails'
-  gem 'faker'
 end
 
 group :development do
