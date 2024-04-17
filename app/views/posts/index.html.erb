@@ -1,7 +1,7 @@
 <h1>Posts</h1>
 
 <%= form_with(url: posts_path, method: :get, html: { class: 'text-end'}) do %>
- <%= select_tag 'tag', options_from_collection_for_select(Tag.all, 'name', 'name', params[:tag]), prompt: 'Selecione uma tag', html: {class: 'form-select form-select-lg mb-3', aria_label: "Small select example"} %>
+ <%= select_tag 'tag', options_from_collection_for_select(Tag.all, 'name', 'name', params[:tag]), prompt: 'Selecione uma tag', html: {class: 'form-select form-select'} %>
  <%= submit_tag 'Filtrar', class: 'btn btn-success' %>
 <% end %>
 
