@@ -6,6 +6,7 @@ en:
     filter: "Filter"
     new_post: "New Post"
     update_post: "Update Post"
+    submit: "Submit"
   text:
     author: "Author"
     title: "Title"

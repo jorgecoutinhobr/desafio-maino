@@ -6,6 +6,7 @@ pt-BR:
     filter: "Filtrar"
     new_post: "Novo Post"
     update_post: "Atualizar Post"
+    submit: "Enviar"
   text:
     author: "Autor"
     title: "Título"
