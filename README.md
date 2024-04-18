@@ -26,7 +26,17 @@
   <li>Image Processing</li>
 </ul>
 
+<h2>Funcionalidades extras</h2>
+<ul>
+  <li>Adicionado I18n</li>
+  <li>Adicionado foto de perfil usando Gravatar</li>
+  <li>Testes com RSpec</li>
+  <li>Tags</li>
+  <li>Filtro de post por tag</li>
+  <li>Posts e comentários usando rich text</li>
+  <li>O usuário pode apagar os próprios comentários</li>
+</ul>
 
-Diagrama do projeto
+<h2>Diagrama do projeto</h2>
 ![mermaid_erd](https://github.com/jorgecoutinhobr/desafio-maino/assets/102194363/f441bc19-47aa-4e48-aae0-edd881a9afbf)
 
