@@ -8,13 +8,13 @@
   <div class='d-flex justify-content-between'>
     <div class='text-left'>
       <p>
-      <%= t('text.created_by')%> -
-      <%= post.user.email %>
+        <%= t('text.created_by')%> -
+        <%= post.user.email %>
       </p>
       <p>
-      <%= t('text.written_by')%> -
-      <%= post.created_at.strftime("%d %m %Y %H:%M") %>
-    </p>
+        <%= t('text.written_by')%> -
+        <%= post.created_at.strftime("%d/%m/%Y - %H:%M") %>
+     </p>
     </div>
     <div class='text-right'>
       <%= link_to t('links.edit'), edit_post_path(@post), class: 'btn btn-success mb-1' if @post.user == current_user %>
