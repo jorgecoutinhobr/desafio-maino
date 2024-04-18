@@ -36,6 +36,10 @@ pt-BR:
     post_deleted: "Postagem apagada com sucesso"
     comment_created: "Comentário criado com sucesso"
     comment_deleted: "Comentário apagado com sucesso"
+    change_your_password: "Mude sua senha"
+    change_password: "Mudar Senha"
+    new_password: "Nova Senha"
+    confirm_new_password: "Confirme Nova Senha"
     
 
     
