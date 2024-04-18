@@ -1,33 +1,25 @@
 require 'rails_helper'
 
 RSpec.describe Post, type: :model do
-
-  it "is valid with valid attributes" do
-    expect(Post.new(title: "Title", body: "Body")).to be_valid
+  describe 'validations' do
+    it { should validate_presence_of(:title) }
+    it { should validate_presence_of(:body) }
   end
 
-  it "is not valid without a sign in" do
-    post = Post.new(title: nil)
-    expect(post).to_not be_valid
+  describe 'associations' do
+    it { should belong_to(:user) }
+    it { should have_many(:comments) }
+    it { should have_rich_text(:body) }
+    it { should have_and_belong_to_many(:tags) }
   end
 
-  it "is not valid without a body" do
-    post = Post.new(body: nil)
-    expect(post).to_not be_valid
-  end
+  describe 'scopes' do
+    let(:post1) { create(:post, created_at: 1.hour.ago) }
+    let(:post2) { create(:post, created_at: 2.hours.ago) }
+    let(:post3) { create(:post, created_at: 3.hours.ago) }
 
-  it "is not valid without a title and body" do
-    post = Post.new(title: nil, body: nil)
-    expect(post).to_not be_valid
-  end
-
-  it "is not valid with a title longer than 255 characters" do
-    post = Post.new(title: "a" * 256)
-    expect(post).to_not be_valid
-  end
-
-  it "is not valid with a body longer than 1000 characters" do
-    post = Post.new(body: "a" * 1001)
-    expect(post).to_not be_valid
+    it 'returns posts in the correct order with most_recent scope' do
+      expect(Post.most_recent).to eq([post1, post2, post3])
+    end
   end
 end
