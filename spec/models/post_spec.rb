@@ -14,11 +14,11 @@ RSpec.describe Post, type: :model do
   end
 
   describe 'scopes' do
-    it 'returns posts in the correct order with most_recent scope' do
-      post1 = create(:post, created_at: 1.hour.ago)
-      post2 = create(:post, created_at: 2.hours.ago)
-      post3 = create(:post, created_at: 3.hours.ago)
+    let(:post1) { create(:post, created_at: 1.hour.ago) }
+    let(:post2) { create(:post, created_at: 2.hours.ago) }
+    let(:post3) { create(:post, created_at: 3.hours.ago) }
 
+    it 'returns posts in the correct order with most_recent scope' do
       expect(Post.most_recent).to eq([post1, post2, post3])
     end
   end
