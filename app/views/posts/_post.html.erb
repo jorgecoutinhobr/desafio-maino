@@ -16,8 +16,14 @@
         <%= post.created_at.strftime("%d/%m/%Y - %H:%M") %>
      </p>
     </div>
-    <div class='text-right'>
-      <%= link_to t('links.edit'), edit_post_path(@post), class: 'btn btn-success mb-1' if @post.user == current_user %>
-      <%= button_to t('links.delete'), post_path(@post), method: :delete, data: { turbo_confirm: "Are you sure?"}, class: 'btn btn-danger'  if @post.user == current_user %>
+    <div class='d-flex text-right'>
+      <div class='px-1'>
+        <%= link_to t('links.edit'), edit_post_path(@post), class: 'btn btn-success' if @post.user == current_user %>
+      </div>
+      <div>
+        <%= button_to t('links.delete'), post_path(@post), method: :delete, data: { turbo_confirm: "Are you sure?"}, class: 'btn btn-danger'  if @post.user == current_user %>
+      </div>
+    </div>
+   </div>
   </div>
 </div>

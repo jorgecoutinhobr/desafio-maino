@@ -8,6 +8,14 @@
 
 
 <table class="table table-dark">
+  <colgroup>
+    <col span="1" style="width: 5%;">
+    <col span="1" style="width: 30%;">
+    <col span="1" style="width: 20%;">
+    <col span="1" style="width: 15%;">
+    <col span="1" style="width: 15%;">
+    <col span="1" style="width: 15%;">
+  </colgroup>
   <thead>
     <tr>
       <th scope="col">#</th>
@@ -40,7 +48,7 @@
         <td class="align-middle">
           <%= link_to t('links.show'), post, class: 'btn btn-sm btn-success' %>
         </td>
-        <td class="align-middle"><%= post.created_at.strftime("%d %m %Y") %></td>
+        <td class="align-middle"><%= post.created_at.strftime("%d/%m/%Y") %></td>
       </tr>
     <% end %>
   </tbody>
