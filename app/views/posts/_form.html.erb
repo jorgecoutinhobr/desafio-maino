@@ -12,7 +12,7 @@
 
   <div class='pt-2'>
     <%= form.label :tag_ids, "Tags" %><br>
-    <%= form.collection_select :tag_ids, Tag.all, :id, :name, {}, {multiple: true} %>
+    <%= form.collection_select :tag_ids, Tag.all, :id, :name, {}, {multiple: true, data: {controller: "slim"}} %>
   </div>
 
   <div>
