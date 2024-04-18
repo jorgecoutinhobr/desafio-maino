@@ -32,7 +32,7 @@
   <li>Adicionado foto de perfil usando Gravatar</li>
   <li>Testes com RSpec</li>
   <li>Tags</li>
-  <li>Filtro de post por tag</li>
+  <li>Filtro de posts por tag</li>
   <li>Posts e comentários usando rich text</li>
   <li>O usuário pode apagar os próprios comentários</li>
 </ul>
