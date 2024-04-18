@@ -16,12 +16,9 @@ class CommentsController < ApplicationController
 
   def destroy
     @comment = @post.comments.find(params[:id])
-
-    if @comment.destroy
-      flash[:notice] = "Comment was successfully destroyed."
-    else
-      flash[:alert] = @comment.errors.full_messages.join(" - ")
-    end
+    @comment.destroy
+    flash[:notice] = "Comment was successfully destroyed."
+    redirect_to post_path(@post)
   end
 
   private

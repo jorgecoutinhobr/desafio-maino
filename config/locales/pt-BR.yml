@@ -29,6 +29,7 @@ pt-BR:
     password: "Senha"
     password_confirmation: "Confirmação de Senha"
     language: "Idioma"
+    are_you_sure: "Você tem certeza?"
     
 
     
