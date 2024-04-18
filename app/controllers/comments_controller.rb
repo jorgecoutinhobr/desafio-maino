@@ -6,7 +6,7 @@ class CommentsController < ApplicationController
     @comment.user = current_user if user_signed_in?
 
     if @comment.save
-      flash[:notice] = "Comment was successfully created."
+      flash[:notice] = t('text.comment_created')
       redirect_to post_path(@post)
     else
       flash[:alert] = @comment.errors.full_messages.join(" - ")
@@ -17,7 +17,7 @@ class CommentsController < ApplicationController
   def destroy
     @comment = @post.comments.find(params[:id])
     @comment.destroy
-    flash[:notice] = "Comment was successfully destroyed."
+    flash[:notice] = t('text.comment_deleted')
     redirect_to post_path(@post)
   end
 

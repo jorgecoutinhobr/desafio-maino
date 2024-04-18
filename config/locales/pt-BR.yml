@@ -30,6 +30,12 @@ pt-BR:
     password_confirmation: "Confirmação de Senha"
     language: "Idioma"
     are_you_sure: "Você tem certeza?"
+    not_owner: "Você não é o proprietário deste post"
+    post_created: "Postagem criada com sucesso"
+    post_updated: "Postagem atualizada com sucesso"
+    post_deleted: "Postagem apagada com sucesso"
+    comment_created: "Comentário criado com sucesso"
+    comment_deleted: "Comentário apagado com sucesso"
     
 
     
