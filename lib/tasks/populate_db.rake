@@ -4,7 +4,7 @@ namespace :populate_db do
     require "faker"
 
     1.times do
-      User.create(email: 'example@com', password: "123456")
+      User.create(email: 'jorginhoffc@hotmail.com', password: "123456")
       User.create(email: 'jorgecoutinho2013@outlook.com', password: "123456")
     end
 
@@ -25,7 +25,7 @@ namespace :populate_db do
       c.save
     end
 
-    10.times do
+    20.times do
       # authenticated comments
       c = Comment.new(post_id: Post.all.sample.id, user_id: [1,2].sample)
       c.body = Faker::Lorem.paragraphs(number: 1).join("\n\n")
