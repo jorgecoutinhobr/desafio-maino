@@ -42,3 +42,5 @@ group :test do
   gem "selenium-webdriver"
   gem 'shoulda-matchers', '~> 6.0'
 end
+
+gem "dockerfile-rails", ">= 1.6", :group => :development
