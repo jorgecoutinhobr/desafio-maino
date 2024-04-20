@@ -11,7 +11,7 @@
   <li>Clone o repositório</li>
   <li>No terminal, abra a pasta do repositório</li>
   <li>Execute o seguinte comando: bundle </li>
-  <li>Depois: rails db:create populate_db:populate </li>
+  <li>Depois: rails db:create db:migrate populate_db:populate </li>
   <li>Para executar o projeto utilize o comando: bin/dev</li>
 </ul>
 
