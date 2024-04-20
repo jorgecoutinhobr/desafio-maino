@@ -10,11 +10,16 @@
           <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'form-control', placeholder: 'Email' %>
         </div>
 
-        <div class="form-group mb-2">
-          <%= f.submit t('text.reset_password'), class: 'btn btn-lg btn-success btn-block' %>
+        <div class="d-flex justify-content-between">
+          <div class='left'>
+            <%= render "devise/shared/links" %>
+          </div>
+          <div class='right'>
+            <%= f.submit t('text.reset_password'), class: 'btn btn-success' %>
+          </div>
         </div>
+
       <% end %>
-      <%= render "devise/shared/links" %>
     </div>
  </div>
 </div>

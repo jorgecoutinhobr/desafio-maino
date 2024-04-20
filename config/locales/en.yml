@@ -26,7 +26,7 @@ en:
     edit_post: "Edit Post"
     new_post: "New Post"
     forgot_password: "Forgot your password?"
-    reset_password: "Send me reset password instructions"
+    reset_password: "Send me instructions"
     password: "Password"
     password_confirmation: "Password Confirmation"
     language: "Language"

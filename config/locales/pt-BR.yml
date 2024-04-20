@@ -26,7 +26,7 @@ pt-BR:
     edit_post: "Editar Postagem"
     new_post: "Nova Postagem"
     forgot_password: "Esqueceu sua senha?"
-    reset_password: "Enviar-me instruções de redefinição de senha"
+    reset_password: "Enviar-me instruções"
     password: "Senha"
     password_confirmation: "Confirmação de Senha"
     language: "Idioma"
