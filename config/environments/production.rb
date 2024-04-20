@@ -94,4 +94,16 @@ Rails.application.configure do
   # ]
   # Skip DNS rebinding protection for the default health check endpoint.
   # config.host_authorization = { exclude: ->(request) { request.path == "/up" } }
+
+  config.action_mailer.default_url_options = { host: 'maino-blog-desafio.fly.dev' }
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+  :address => 'smtp.mailersend.net',
+  :port => 587,
+  :domain => 'maino-blog-desafio.fly.dev',
+  :user_name => 'YOUR_MAILERSEND_USERNAME',
+  :password => 'YOUR_MAILERSEND_PASSWORD',
+  :authentication => :login,
+  :enable_starttls_auto => true
+}
 end
