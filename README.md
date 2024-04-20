@@ -11,19 +11,22 @@
   <li>Clone o repositório</li>
   <li>No terminal, abra a pasta do repositório</li>
   <li>Execute o seguinte comando: bundle </li>
-  <li>Depois: rails db:create </li>
+  <li>Depois: rails db:create populate_db:populate </li>
+  <li>Para executar o projeto utilize o comando: bin/dev</li>
 </ul>
 
 <h2>Gems utilizadas</h2>
 <ul>
   <li>Devise</li>
   <li>Rspec</li>
+  <li>Shoulda-matchers</li>
   <li>Faker</li>
   <li>Pagy</li>
   <li>Pry-rails</li>
   <li>Awesome Print</li>
   <li>Factory Bot</li>
   <li>Image Processing</li>
+  <li>slim-select</li>
 </ul>
 
 <h2>Funcionalidades extras</h2>
