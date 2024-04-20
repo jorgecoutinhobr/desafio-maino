@@ -101,8 +101,8 @@ Rails.application.configure do
   :address => 'smtp.mailersend.net',
   :port => 587,
   :domain => 'maino-blog-desafio.fly.dev',
-  :user_name => 'MS_RTUEUh@trial-3zxk54vnpzxljy6v.mlsender.net',
-  :password => 'uGFRGjPp6mpVpFdo',
+  :user_name => ENV['SMTP_USERNAME'],
+  :password => ENV['SMTP_PASSWORD'],
   :authentication => :login,
   :enable_starttls_auto => true
 }
