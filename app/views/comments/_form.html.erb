@@ -1,6 +1,6 @@
 <%= form_with(model: [post, post.comments.build], class: 'mt-2') do |form| %>
   <div>
-    <%= form.rich_text_area :body %>
+    <%= form.rich_text_area :body, required: true %>
   </div>
 
   <div>

@@ -2,12 +2,12 @@
 
   <div class='pt-2'>
     <%= form.label t('text.title'), style: "display: block" %>
-    <%= form.text_field :title %>
+    <%= form.text_field :title, required: true %>
   </div>
 
   <div class='pt-2'>
     <%= form.label t('text.body'), style: "display: block" %>
-    <%= form.rich_text_area :body %>
+    <%= form.rich_text_area :body, required: true %>
   </div>
 
   <div class='pt-2'>
