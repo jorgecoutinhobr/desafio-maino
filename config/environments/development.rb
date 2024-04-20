@@ -75,17 +75,18 @@ Rails.application.configure do
   config.action_controller.raise_on_missing_callback_actions = true
 
   # devise config
-  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
 
   # mailtrap config
 
+  config.action_mailer.default_url_options = { host: 'localhost', port: 3000}
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
-    :user_name => '2c9bda617f6df0',
-    :password => '2bb8cfc0411445',
-    :address => 'sandbox.smtp.mailtrap.io',
-    :host => 'sandbox.smtp.mailtrap.io',
-    :port => '2525',
-    :authentication => :login
+  :address => 'smtp.mailersend.net',
+  :port => 587,
+  :domain => 'maino-blog-desafio.fly.dev',
+  :user_name => 'MS_RTUEUh@trial-3zxk54vnpzxljy6v.mlsender.net',
+  :password => 'uGFRGjPp6mpVpFdo',
+  :authentication => :login,
+  :enable_starttls_auto => true
   }
 end
